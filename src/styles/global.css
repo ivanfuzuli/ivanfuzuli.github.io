@@ -5,3 +5,7 @@
 .visited:visited {
   color: blueviolet;
 }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
