@@ -3,6 +3,7 @@ module.exports = {
     title: `Can Küçükyılmaz'ın Kişisel Web Güncesi`,
     description: `Her şeyi olabildiğince sade yapın, ama basit değil. - Albert Einstein.`,
     author: `@cankucukyilmaz`,
+    siteUrl: "http://can.kucukyilmaz.org",
   },
   plugins: [
     {
@@ -34,6 +35,12 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/nerd.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `cankucukyilmaz`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
