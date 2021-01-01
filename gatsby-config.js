@@ -37,12 +37,6 @@ module.exports = {
         icon: `src/images/nerd.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-disqus`,
-      options: {
-        shortname: `cankucukyilmaz`,
-      },
-    },
     `gatsby-plugin-offline`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

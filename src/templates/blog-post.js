@@ -3,15 +3,10 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Img from "gatsby-image";
-import { Disqus } from "gatsby-plugin-disqus";
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark;
   let featuredImgFluid = post.frontmatter.image.childImageSharp.fluid;
-  let disqusConfig = {
-    identifier: post.frontmatter.id,
-    title: post.frontmatter.title,
-  };
 
   return (
     <Layout>
@@ -20,8 +15,6 @@ export default function BlogPost({ data }) {
       <div className="max-w-3xl mr-auto ml-auto p-4 bg-white border-gray-300 rounded mt-4 mb-4">
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <Disqus config={disqusConfig} />
       </div>
     </Layout>
   );
