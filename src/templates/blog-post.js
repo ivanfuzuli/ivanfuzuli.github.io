@@ -17,7 +17,7 @@ export default function BlogPost({ data }) {
     <Layout>
       <SEO title={post.frontmatter.title} />
       <Img fluid={{ ...featuredImgFluid, aspectRatio: 21 / 9 }} />
-      <div className="max-w-3xl mr-auto ml-auto p-4">
+      <div className="max-w-3xl mr-auto ml-auto p-4 bg-white border-gray-300 rounded mt-4 mb-4">
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr />

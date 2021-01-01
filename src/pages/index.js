@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Anasayfa" />
-      <div className="max-w-3xl mr-auto ml-auto p-4">
+      <div className="max-w-3xl mr-auto ml-auto p-4 bg-white border-gray-300 rounded mt-4 mb-4">
         <h4>{data.allMarkdownRemark.totalCount} Adet Yazı</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
