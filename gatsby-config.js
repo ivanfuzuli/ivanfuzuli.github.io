@@ -28,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Can Küçükyılmaz'ın Blogu`,
+        short_name: `Can Küçükyılmaz`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
