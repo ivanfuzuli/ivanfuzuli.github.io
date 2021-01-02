@@ -22,10 +22,12 @@ const IndexPage = ({ data }) => {
                   className="text-gray-900 font-bold text-lg fon-x hover:no-underline"
                 >
                   {node.frontmatter.title}{" "}
-                  <span>— {node.frontmatter.date}</span>
                 </Link>
               </h3>
-              <p>{node.excerpt}</p>
+              <div>{node.excerpt}</div>
+              <div className="text-sm text-gray-500">
+                — {node.frontmatter.date}
+              </div>
             </div>
             <div className="w-2/6 ">
               <Link to={`posts${node.fields.slug}`}>
