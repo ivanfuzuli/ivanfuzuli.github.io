@@ -3,13 +3,15 @@ import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Content from "../components/content";
 
 const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Anasayfa" />
-      <div className="max-w-3xl mr-auto ml-auto p-4 bg-white border-gray-300 rounded mt-4 mb-4">
-        <h4>{data.allMarkdownRemark.totalCount} Adet Yazı</h4>
+      <Content
+        title={<span>{data.allMarkdownRemark.totalCount} Adet Yazı</span>}
+      >
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <h3>
@@ -23,7 +25,7 @@ const IndexPage = ({ data }) => {
             <p>{node.excerpt}</p>
           </div>
         ))}
-      </div>
+      </Content>
     </Layout>
   );
 };

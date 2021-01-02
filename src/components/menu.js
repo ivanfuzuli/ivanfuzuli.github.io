@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
+import linkedin from "../assets/linkedin.svg";
 
 const Menu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Menu = () => {
   };
   return (
     <nav className="bg-gray-800">
-      <div className="max-w-4xl mr-auto ml-auto mx-auto px-2 sm:px-6 lg:px-8">
+      <div className="max-w-3xl mr-auto ml-auto mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
@@ -80,6 +81,14 @@ const Menu = () => {
                 </Link>
               </div>
             </div>
+          </div>
+          <div className="justify-self-end">
+            <a
+              href="https://www.linkedin.com/in/cankucukyilmaz/"
+              className="h-3"
+            >
+              <img src={linkedin} className=" mb-0" alt="Linkedin" />
+            </a>
           </div>
         </div>
       </div>
