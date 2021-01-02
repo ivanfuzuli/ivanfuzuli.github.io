@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Content from "../components/content";
+import Img from "gatsby-image";
 
 const IndexPage = ({ data }) => {
   return (
@@ -13,16 +14,29 @@ const IndexPage = ({ data }) => {
         title={<span>{data.allMarkdownRemark.totalCount} Adet Yazı</span>}
       >
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <h3>
-              <Link
-                to={`posts${node.fields.slug}`}
-                className="visited underline text-blue-700 hover:no-underline"
-              >
-                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
+          <div key={node.id} className="flex mb-2">
+            <div className="w-4/6 pr-2">
+              <h3>
+                <Link
+                  to={`posts${node.fields.slug}`}
+                  className="text-gray-900 font-bold text-lg fon-x hover:no-underline"
+                >
+                  {node.frontmatter.title}{" "}
+                  <span>— {node.frontmatter.date}</span>
+                </Link>
+              </h3>
+              <p>{node.excerpt}</p>
+            </div>
+            <div className="w-2/6 ">
+              <Link to={`posts${node.fields.slug}`}>
+                <Img
+                  className="rounded"
+                  fluid={{
+                    ...node.frontmatter.image.childImageSharp.fluid,
+                  }}
+                />
               </Link>
-            </h3>
-            <p>{node.excerpt}</p>
+            </div>
           </div>
         ))}
       </Content>
@@ -40,6 +54,13 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD/MM/YYYY")
+            image {
+              childImageSharp {
+                fluid(maxHeight: 100, maxWidth: 150) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           fields {
             slug
